@@ -1,11 +1,13 @@
 import pygame
 from __init__ import initialize_game
 from config import *
+from utils import *
 
 def main():
     # Initialize Pygame and game entities
     screen, clock = initialize_game()
-
+    cube_angle = 0
+    
     # Game loop
     running = True
     while running:
@@ -18,11 +20,15 @@ def main():
         keys = pygame.key.get_pressed()
 
         # Update game state
-        # all_sprites.update()
+            # Increment the cycle counter
+
+        Calculate_Cube(cube_angle)
+        cube_angle += 0.5
 
         # Draw graphics
         screen.fill(BACKGROUND_COLOR)  # Fill the screen with a black color (adjust as needed)
-        # all_sprites.draw(screen)
+        # Draw line here
+        Draw_Cube(LINE_COLOR, screen, pygame)
 
         # Refresh the screen
         pygame.display.flip()
